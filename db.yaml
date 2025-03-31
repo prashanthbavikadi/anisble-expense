@@ -15,13 +15,13 @@
       state: started
       enabled: yes
     
-  - name: install mysql dependencies
+  - name: install python mysql dependencies
     ansible.builtin.service:
       name:
       - PyMySQL
       - cryptography
       executable: pip3.9
-      
+
   # check password is already setup or not
   - name:  check DB connection
     community.mysql.mysql_info:
